@@ -1,0 +1,27 @@
+# Runtime data and secrets must never be published.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+instance/
+data/
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite*
+*.key
+*.pem
+*.enc
+*.log
+*.zip
+backups/
+.vscode/
+.DS_Store
+Thumbs.db
+tempCodeRunnerFile.py
+static/payments/promptpay.png
+
+# Reconstructed during the build from verified parts
+static/videos/thailand-memories.mp4

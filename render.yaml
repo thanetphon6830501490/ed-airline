@@ -1,0 +1,24 @@
+# FREE disposable preview. No persistent disk and no paid resources.
+services:
+  - type: web
+    name: ed-airline
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python assemble_media.py
+    startCommand: python serve.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: ARI_ENV
+        value: production
+      - key: ARI_BIND
+        value: 0.0.0.0
+      - key: ED_SALES_MODE
+        value: demo
+      - key: ED_PUBLIC_PREVIEW
+        value: "1"
+      - key: ED_DATA_DIR
+        value: /tmp/ed-airline
+      - key: ARI_SESSION_SECRET
+        generateValue: true
