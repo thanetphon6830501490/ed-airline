@@ -1,0 +1,11 @@
+[
+  {
+    "target": "static/videos/thailand-memories.mp4",
+    "parts": [
+      "thailand-memories-01.part",
+      "thailand-memories-02.part",
+      "thailand-memories-03.part"
+    ],
+    "sha256": "a73d2d4a1f913758f5b02b3df09a05a447a4af399f0ab7293e25d04756ce0903"
+  }
+]
