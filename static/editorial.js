@@ -1,0 +1,4 @@
+// Move the existing booking form into the banner; preserve its fields and handlers.
+const editorialHome=home;
+home=function(){editorialHome();const hero=app.querySelector('.hero');if(!hero)return;hero.classList.add('editorial-hero');const copy=hero.querySelector('.hero-copy');if(copy){copy.querySelector('.eyebrow').textContent='THAILAND / THE NEXT JOURNEY';copy.querySelector('h1').innerHTML=say('เดินทางพร้อมกับพวกเรา<br><span class="hero-brand-script">ED Ariline</span>','Travel with us<br><span class="hero-brand-script">ED Ariline</span>');copy.querySelector('p').textContent=say('บินไว บินไกล ทั่วประเทศ · ED AIRLINE','Innovation takes flight · ED AIRLINE')}const searchForm=app.querySelector('.ed-search:not(.compact-search)');if(searchForm){searchForm.classList.add('hero-search-glass');hero.append(searchForm)}};
+if(stage===0&&!requestedReset&&!requestedVerify&&location.pathname!=='/admin')home();

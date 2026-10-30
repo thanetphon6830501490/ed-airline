@@ -1,0 +1,8 @@
+.ed-flight-model{display:none!important}
+@media(hover:hover) and (pointer:fine){html,body,body *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 2L13 12L27 12L29 15L17 17L22 25L20 27L11 20L8 29L5 28L6 16L2 5Z' fill='%23ff8708' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 3 2,auto}body input,body textarea,body [contenteditable=true]{cursor:text}body button:disabled{cursor:not-allowed}}
+.footer-contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px;width:100%;border-top:1px solid #dbe2e5;padding-top:18px;font-size:12px}.footer-contact a{color:#a86113}.footer-contact span{flex-basis:100%}.admin-service-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}header .admin-support-shortcut{color:#c87612!important}
+@media print{.admin-service-links,.footer-contact{display:none}}
+
+.flight-orbit,.ed-flight-model{display:none!important}
+/* User supplied aircraft, scaled only for the native pointer. */
+@media(hover:hover) and (pointer:fine){html,body,body *{cursor:url('/static/cursors/airplane-pointer.png') 20 1,auto}body input,body textarea,body [contenteditable=true]{cursor:text}body button:disabled{cursor:not-allowed}}

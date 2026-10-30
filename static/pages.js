@@ -1,0 +1,22 @@
+// Clear page boundaries while preserving the existing four-step checkout.
+const checkoutPages=[['เลือกเที่ยวบิน','Select flights','เลือกขาไป และเลือกขากลับแยกอีกครั้งสำหรับการเดินทางไป–กลับ'],['ข้อมูลผู้โดยสาร','Passenger details','ตรวจข้อมูลติดต่อ ผู้โดยสาร สัมภาระ และบริการเสริม'],['ชำระเงิน','Payment','ตรวจยอดรวม แล้วเลือกช่องทางชำระเงิน'],['ตั๋วของคุณ','Your tickets','รายละเอียดการจองและตั๋วสำหรับผู้โดยสารแต่ละคน']];
+steps=function(){return `<ol class="steps ed-page-steps" aria-label="ขั้นตอนการจอง">${checkoutPages.map((p,i)=>`<li class="${stage===i+1?'active':stage>i+1?'complete':''}" ${stage===i+1?'aria-current="step"':''}><span class="step-number">${stage>i+1?'✓':i+1}</span><span>${say(p[0],p[1])}</span></li>`).join('')}</ol>`};
+function identifyPage(key,index=0){document.body.dataset.page=key;app.dataset.page=key;if(index){const p=checkoutPages[index-1],flow=app.querySelector('.flow');if(flow&&!flow.querySelector('.ed-page-heading')){const heading=`<section class="ed-page-heading"><div><span class="eyebrow">ED AIRLINE · ${String(index).padStart(2,'0')} / 04</span><h1>${say(p[0],p[1])}</h1><p>${p[2]}</p></div><span class="page-emblem" aria-hidden="true">${String(index).padStart(2,'0')}</span></section>`;const step=flow.querySelector('.steps');step?step.insertAdjacentHTML('afterend',heading):flow.insertAdjacentHTML('afterbegin',heading)}}document.querySelectorAll('.ed-main-nav button').forEach(n=>n.setAttribute('aria-current',n.dataset.destination===key?'page':'false'))}
+const pageHome=home;
+home=function(){pageHome();identifyPage('home')};
+const pageResults=results;
+results=function(){const result=pageResults();identifyPage('flights',1);const form=app.querySelector('.compact-search');if(form&&!form.closest('.ed-search-editor')){const wrapper=document.createElement('details');wrapper.className='ed-search-editor';const title=document.createElement('summary');title.textContent=say('แก้ไขเส้นทาง วันที่ หรือผู้โดยสาร','Edit route, dates or passengers');form.before(wrapper);wrapper.append(title,form)}return result};
+const pageBooking=booking;
+booking=function(){pageBooking();if(app.querySelector('#booking'))identifyPage('passengers',2)};
+const pagePayment=payment;
+payment=function(){pagePayment();identifyPage('payment',3)};
+const pageTicket=ticket;
+ticket=function(){pageTicket();identifyPage('tickets',4)};
+const pageAuth=authPage;
+authPage=function(...args){pageAuth(...args);identifyPage(args[0]==='register'?'register':'login')};
+const pageMembership=membershipPage;
+membershipPage=async function(){await pageMembership();identifyPage('membership')};
+function promotionsPage(){pageHome();const promo=app.querySelector('.ed-promo-grid')?.closest('section');clearInterval(window.heroTimer);if(!promo)return home();app.innerHTML=`<div class="flow promotions-page"><section class="ed-page-heading"><div><div class="eyebrow">ED AIRLINE · MONTHLY OFFERS</div><h1>${say('โปรโมชันประจำเดือน','Monthly promotions')}</h1><p>เลือกข้อเสนอและตรวจเงื่อนไขก่อนเริ่มการจอง</p></div>${brandMark()}</section>${promo.outerHTML}<div class="actions"><button class="secondary" onclick="home()">กลับหน้าหลัก</button></div></div>`;identifyPage('promotions');window.scrollTo(0,0)}
+const mainNav=document.querySelector('header nav');if(mainNav){mainNav.className='ed-main-nav';mainNav.innerHTML=`<button data-destination="home" onclick="home()">หน้าหลัก</button><button data-destination="flights" onclick="home();document.querySelector('.ed-search').scrollIntoView({behavior:'smooth'})">จองเที่ยวบิน</button><button data-destination="membership" onclick="account?membershipPage():authPage('register')">สมาชิก</button><button data-destination="promotions" onclick="promotionsPage()">โปรโมชัน</button>`}
+Object.assign(translations,{'โปรโมชัน':'Promotions','สมาชิก':'Membership','จองเที่ยวบิน':'Book flights','เลือกข้อเสนอและตรวจเงื่อนไขก่อนเริ่มการจอง':'Choose an offer and review its terms before booking','กลับหน้าหลัก':'Back to home','ตรวจข้อมูลติดต่อ ผู้โดยสาร สัมภาระ และบริการเสริม':'Check contacts, passengers, bags and extras','ตรวจยอดรวม แล้วเลือกช่องทางชำระเงิน':'Review the total and choose a payment method','รายละเอียดการจองและตั๋วสำหรับผู้โดยสารแต่ละคน':'Booking details and tickets for each passenger','เลือกขาไป และเลือกขากลับแยกอีกครั้งสำหรับการเดินทางไป–กลับ':'Select outbound, then select return separately for a round trip'});
+if(!requestedReset&&!requestedVerify&&location.pathname!=='/admin')identifyPage('home');

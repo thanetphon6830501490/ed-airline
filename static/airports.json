@@ -1,0 +1,242 @@
+[
+  {
+    "code": "BKK",
+    "name": "กรุงเทพฯ · สุวรรณภูมิ",
+    "region": "กลาง / ตะวันออก",
+    "demo_available": true
+  },
+  {
+    "code": "DMK",
+    "name": "กรุงเทพฯ · ดอนเมือง",
+    "region": "กลาง / ตะวันออก",
+    "demo_available": true
+  },
+  {
+    "code": "UTP",
+    "name": "อู่ตะเภา · ระยอง",
+    "region": "กลาง / ตะวันออก",
+    "demo_available": true
+  },
+  {
+    "code": "HHQ",
+    "name": "หัวหิน · ประจวบคีรีขันธ์",
+    "region": "กลาง / ตะวันออก",
+    "demo_available": true
+  },
+  {
+    "code": "TDX",
+    "name": "ตราด",
+    "region": "กลาง / ตะวันออก",
+    "demo_available": true
+  },
+  {
+    "code": "CNX",
+    "name": "เชียงใหม่",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "CEI",
+    "name": "เชียงราย · แม่ฟ้าหลวง",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "HGN",
+    "name": "แม่ฮ่องสอน",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "LPT",
+    "name": "ลำปาง",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "PRH",
+    "name": "แพร่",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "NNT",
+    "name": "น่านนคร",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "MAQ",
+    "name": "แม่สอด · ตาก",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "PHS",
+    "name": "พิษณุโลก",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "PHY",
+    "name": "เพชรบูรณ์",
+    "region": "เหนือ",
+    "demo_available": false
+  },
+  {
+    "code": "THS",
+    "name": "สุโขทัย",
+    "region": "เหนือ",
+    "demo_available": true
+  },
+  {
+    "code": "TKT",
+    "name": "ตาก",
+    "region": "เหนือ",
+    "demo_available": false
+  },
+  {
+    "code": "PYY",
+    "name": "ปาย",
+    "region": "เหนือ",
+    "demo_available": false
+  },
+  {
+    "code": "VTCS",
+    "name": "แม่สะเรียง (ICAO)",
+    "region": "เหนือ",
+    "demo_available": false
+  },
+  {
+    "code": "KKC",
+    "name": "ขอนแก่น",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "UTH",
+    "name": "อุดรธานี",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "UBP",
+    "name": "อุบลราชธานี",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "KOP",
+    "name": "นครพนม",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "SNO",
+    "name": "สกลนคร",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "LOE",
+    "name": "เลย",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "ROI",
+    "name": "ร้อยเอ็ด",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "BFV",
+    "name": "บุรีรัมย์",
+    "region": "อีสาน",
+    "demo_available": true
+  },
+  {
+    "code": "NAK",
+    "name": "นครราชสีมา",
+    "region": "อีสาน",
+    "demo_available": false
+  },
+  {
+    "code": "PXR",
+    "name": "สุรินทร์ภักดี",
+    "region": "อีสาน",
+    "demo_available": false
+  },
+  {
+    "code": "HKT",
+    "name": "ภูเก็ต",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "KBV",
+    "name": "กระบี่",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "USM",
+    "name": "เกาะสมุย",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "HDY",
+    "name": "หาดใหญ่",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "URT",
+    "name": "สุราษฎร์ธานี",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "NST",
+    "name": "นครศรีธรรมราช",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "TST",
+    "name": "ตรัง",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "NAW",
+    "name": "นราธิวาส",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "UNN",
+    "name": "ระนอง",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "CJM",
+    "name": "ชุมพร",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "BTZ",
+    "name": "เบตง · ยะลา",
+    "region": "ใต้",
+    "demo_available": true
+  },
+  {
+    "code": "PAN",
+    "name": "ปัตตานี",
+    "region": "ใต้",
+    "demo_available": false
+  }
+]

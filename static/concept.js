@@ -1,0 +1,12 @@
+// Shared visual treatment for account and management pages as well as checkout.
+function conceptPage(key,th,en){document.body.dataset.page=key;app.dataset.page=key;const flow=app.querySelector('.flow');if(flow&&!flow.querySelector('.ed-page-heading'))flow.insertAdjacentHTML('afterbegin',`<section class="ed-page-heading"><div><span class="eyebrow">ED AIRLINE · YOUR JOURNEY</span><h1>${say(th,en)}</h1><p>สายการบินแห่งนวัตกรรม</p></div>${brandMark()}</section>`)}
+const conceptHome=home;
+home=function(){conceptHome();const hero=app.querySelector('.hero');if(hero){const kicker=hero.querySelector('.eyebrow');if(kicker)kicker.textContent='INNOVATION TAKES FLIGHT';const intro=hero.querySelector('p');if(intro)intro.textContent='ED AIRLINE · สายการบินแห่งนวัตกรรม'}const join=app.querySelector('.ed-join');if(join&&!app.querySelector('.concept-trust'))join.insertAdjacentHTML('afterend',`<section class="section concept-trust"><div><b>◇ ราคาชัดเจน</b><span>เห็นยอดรวมก่อนยืนยัน</span></div><div><b>✈ จองง่าย</b><span>เลือกเที่ยวบินในแบบของคุณ</span></div><div><b>♡ ดูแลทุกการเดินทาง</b><span>รายละเอียดครบในบัญชีเดียว</span></div></section>`)};
+const conceptProfile=profilePage;profilePage=function(){conceptProfile();if(account)conceptPage('account','บัญชีของฉัน','My account')};
+const conceptSecurity=securityPage;securityPage=function(mode){conceptSecurity(mode);if(account)conceptPage('security','บัญชีและความปลอดภัย','Account & security')};
+const conceptBookings=listBookings;listBookings=async function(admin=false){await conceptBookings(admin);conceptPage(admin?'admin':'bookings',admin?'จัดการข้อมูลการจอง':'การจองของฉัน',admin?'Booking management':'My bookings')};
+const conceptAudit=auditPage;auditPage=async function(){await conceptAudit();conceptPage('audit','ประวัติกิจกรรม','Activity log')};
+const conceptForgot=forgotPasswordPage;forgotPasswordPage=function(){conceptForgot();conceptPage('reset','ลืมรหัสผ่าน','Forgot password')};
+const conceptReset=resetPasswordPage;resetPasswordPage=function(token){conceptReset(token);conceptPage('reset','ตั้งรหัสผ่านใหม่','Reset password')};
+const conceptAuth=authPage;authPage=function(mode='login',message=''){conceptAuth(mode,message);conceptPage(mode==='register'?'register':'login',mode==='register'?'สร้างบัญชีใหม่':'ยินดีต้อนรับกลับ',mode==='register'?'Create your account':'Welcome back')};
+if(stage===0&&!requestedReset&&!requestedVerify&&location.pathname!=='/admin')home();
